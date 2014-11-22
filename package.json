@@ -1,0 +1,22 @@
+{
+  "name": "myo-drone",
+  "main": "server.js",
+  "description": "Uses Node.js and Myo armband to control an AR Drone while streaming video to the browser",
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.3.x"
+  },
+  "author": "Charlie Gerard <charlie.a.gerard@gmail.com>",
+  "dependencies": {
+    "express": "~4.0.0",
+    "body-parser": "~1.0.0",
+    "method-override": "~1.0.0",
+    "morgan": "~1.0.0",
+    "ar-drone": "git://github.com/felixge/node-ar-drone.git",
+    "faye": "1.x",
+    "dronestream": "1.1.x",
+    "myo": "1.1.0",
+    "ws": "0.4.32"
+  }
+}
