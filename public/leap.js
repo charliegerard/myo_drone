@@ -4,19 +4,23 @@ var droneCommandsHandler = function () {
   myo = Myo.create(0);
 
   myo.on('fingers_spread', function(){
+    myo.setLockingPolicy();
     takeoff();
     console.log('takeoff');
   });
 
   myo.on('wave_in', function(){
+    myo.setLockingPolicy();
     goLeft();
   })
 
   myo.on('wave_out', function(){
+    myo.setLockingPolicy();
     goRight();
   })
 
   myo.on('fist', function(){
+    myo.setLockingPolicy();
     console.log('land');
     land();
   })
