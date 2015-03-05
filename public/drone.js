@@ -24,12 +24,12 @@ var droneCommandsHandler = function () {
   })
 
   faye = new Faye.Client("/faye", {
-    timeout: 60 // may need to adjust. If server doesn't send back any data for the given period of time, the client will assume the server has gone away and will attempt to reconnect. Timeout is given in seconds and should be larger than timeout on server side to give the server ample time to respond.
+    timeout: 60
   });
 
-  flying = false; // used to prevent action while drone is dormant
-  timeout = 400;  // used for each server publish
-  speedAdjuster = 2.5; // higher number decreases action speed.  DO NOT set to less than 1
+  flying = false;
+  timeout = 400;
+  speedAdjuster = 2.5;
 
   var takeoff = function () {
   	flying = true;
@@ -39,7 +39,7 @@ var droneCommandsHandler = function () {
   };
 
   var land = function () {
-  	flying = false;	// prevents faye from publishing actions when drone has landed
+  	flying = false;
   	return faye.publish("/drone/drone", {
       action: 'land'
     });
