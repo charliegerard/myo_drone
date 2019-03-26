@@ -5,23 +5,25 @@ var droneCommandsHandler = function () {
 
   myo.unlock();
 
-  myo.on('fingers_spread', function(){
-    takeoff();
-    console.log('takeoff');
-  });
+  // myo.on('fingers_spread', function(){
+  //   takeoff();
+  //   console.log('takeoff');
+  // });
 
   myo.on('wave_in', function(){
-    goLeft();
+    // goLeft();
+    takeoff();
   })
 
   myo.on('wave_out', function(){
-    goRight();
-  })
-
-  myo.on('fist', function(){
-    console.log('land');
+    // goRight();
     land();
   })
+
+  // myo.on('fist', function(){
+  //   console.log('land');
+  //   land();
+  // })
 
   faye = new Faye.Client("/faye", {
     timeout: 60
